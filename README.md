@@ -29,4 +29,3 @@ This project demonstrates how to:
 2️⃣ Checkov — IaC scanning  
 3️⃣ OWASP ZAP — DAST  
 4️⃣ Trivy + Grype — Image scanning & hardening  
-

@@ -6,9 +6,16 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   image-scanning:
     runs-on: ubuntu-latest
+    permissions:
+        contents: read
+        security-events: write
 
     steps:
       - name: Checkout repository

@@ -27,6 +27,13 @@ jobs:
       - name: Build Docker image
         run: docker build -t secure-flask-app:latest .
 
+      - name: Generate SBOM using Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: secure-flask-app:latest
+          format: cyclonedx
+          output: sbom.cyclonedx.json
+
       # 🔍 Trivy scan for vulnerabilities + SBOM
       - name: Scan image with Trivy
         uses: aquasecurity/trivy-action@0.28.0
